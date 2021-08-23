@@ -4,10 +4,10 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <span>{this.props.counter.value}</span>
+        <span className={this.getBadgeClass()}>{this.props.counter.value}</span>
         <button
           onClick={() => this.props.onIncrement(this.props.counter)}
-          className={this.getBadgeClass()}
+          className={this.getButtonClass()}
         >
           Increment
         </button>
@@ -25,8 +25,12 @@ class Counter extends Component {
   //     const { value } = this.state;
   //     return value === 0 ? "zero" : value;
   //   }
-
   getBadgeClass() {
+    let classes = "badge bg-";
+    return (classes += this.props.counter.value === 0 ? "warning" : "primary");
+  }
+
+  getButtonClass() {
     let classes = "btn btn-sm m-2 btn-";
     return (classes +=
       this.props.counter.value === 0 ? "secondary" : "primary");
