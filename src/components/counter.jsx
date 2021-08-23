@@ -7,6 +7,7 @@ class Counter extends Component {
       <div>
         <span>{this.formatCount()}</span>
         <button className={this.getBadgeClass()}>Increment</button>
+        <button className="btn btn-danger btn-sm m-2">Delete</button>
       </div>
     );
   }
@@ -17,7 +18,7 @@ class Counter extends Component {
   }
 
   getBadgeClass() {
-    let classes = "btn btm-sm m-2 btn-";
+    let classes = "btn btn-sm m-2 btn-";
     return (classes += this.state.value === 0 ? "secondary" : "primary");
   }
 }
