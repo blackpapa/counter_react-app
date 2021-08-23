@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  state = { value: 0 };
+  state = { value: this.props.counter.value };
   render() {
     return (
       <div>
