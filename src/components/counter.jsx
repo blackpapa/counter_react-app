@@ -5,7 +5,12 @@ class Counter extends Component {
     return (
       <div>
         <span>{this.props.counter.value}</span>
-        <button className={this.getBadgeClass()}>Increment</button>
+        <button
+          onClick={() => this.props.onIncrement(this.props.counter)}
+          className={this.getBadgeClass()}
+        >
+          Increment
+        </button>
         <button className="btn btn-danger btn-sm m-2">Delete</button>
       </div>
     );
