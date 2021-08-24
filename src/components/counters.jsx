@@ -13,18 +13,14 @@ const Counters = ({
       <button onClick={onReset} className="btn-primary btn-sm m-2">
         Reset
       </button>
-      <ul>
-        {counters.map((counter) => (
-          <li key={counter.id}>
-            <Counter
-              counter={counter}
-              onIncrement={onIncrement}
-              onDecrement={onDecrement}
-              onDelete={onDelete}
-            />
-          </li>
-        ))}
-      </ul>
+      {counters.map((counter) => (
+        <Counter
+          counter={counter}
+          onIncrement={onIncrement}
+          onDecrement={onDecrement}
+          onDelete={onDelete}
+        />
+      ))}
     </div>
   );
 };
